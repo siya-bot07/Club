@@ -1,0 +1,348 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#221b00",
+                        "on-tertiary": "#3a3000",
+                        "tertiary-container": "#c9a900",
+                        "secondary-fixed": "#ffd9e0",
+                        "surface-container-highest": "#333539",
+                        "on-secondary": "#66002c",
+                        "on-secondary-container": "#590026",
+                        "on-primary-container": "#ffffff",
+                        "outline-variant": "#514255",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#74009f",
+                        "inverse-on-surface": "#2f3035",
+                        "on-tertiary-container": "#4c3f00",
+                        "secondary": "#ffb1c3",
+                        "surface-dim": "#111317",
+                        "surface-variant": "#333539",
+                        "primary-fixed-dim": "#ecb2ff",
+                        "primary-container": "#bd00ff",
+                        "secondary-container": "#ff4b89",
+                        "surface": "#111317",
+                        "primary": "#ecb2ff",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "secondary-fixed-dim": "#ffb1c3",
+                        "surface-container-high": "#282a2e",
+                        "on-primary-fixed": "#320047",
+                        "surface-bright": "#37393e",
+                        "surface-container-lowest": "#0c0e12",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-secondary-fixed": "#3f0019",
+                        "on-primary": "#520071",
+                        "on-secondary-fixed-variant": "#8f0041",
+                        "surface-tint": "#ecb2ff",
+                        "inverse-primary": "#9900cf",
+                        "background": "#111317",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#f8d8ff",
+                        "outline": "#9d8ba0",
+                        "surface-container-low": "#1a1c20",
+                        "on-surface": "#e2e2e8",
+                        "tertiary": "#e9c400",
+                        "on-error": "#690005",
+                        "on-background": "#e2e2e8",
+                        "tertiary-fixed": "#ffe16d",
+                        "inverse-surface": "#e2e2e8",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#d4c0d7",
+                        "surface-container": "#1e2024"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1200px",
+                        "section-gap": "80px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Syne"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-lg": ["Syne"],
+                        "headline-lg": ["Syne"],
+                        "headline-lg-mobile": ["Syne"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #111317;
+            color: #e2e2e8;
+            font-family: 'Hanken Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(236, 178, 255, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(236, 178, 255, 0.3);
+            transform: translateY(-4px);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #ecb2ff 0%, #ffb1c3 100%);
+            color: #320047;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(236, 178, 255, 0.4);
+            transform: scale(1.02);
+        }
+        .btn-secondary {
+            border: 1px solid #ecb2ff;
+            color: #ecb2ff;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: rgba(236, 178, 255, 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(17, 19, 23, 0.4) 0%, rgba(17, 19, 23, 1) 100%);
+        }
+        .section-padding {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl border-b border-primary/15 h-20 flex items-center max-w-full px-margin-mobile md:px-gutter justify-center">
+<div class="flex items-center gap-2">
+<span class="font-display-lg text-headline-md text-primary tracking-tighter">ICC-INSYNC</span>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20">
+<div class="absolute inset-0 z-0">
+<img alt="Hero background of InSync dancers" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjM5HPDpN1qwVQ67ZvrxjaQxf9X-LS76dnv0n6v1_NrGUiDD84r4Q3XsH55UEeAgvkN0tk7qS5V1smWZp1G1gVkyhsh7PfF1iEtvLBdUnR8TBGL_DmeVjRKp4BmSoUsYxhANwa0PSzAcV9S-Yfb01rA6s2t5K1PHDpKmSKlyGR2qJAOj71fWEVW6LD3acyu-yCRfVjJYLkkwcJ7CYumTjGiVK_fcDnvH1vr_z6VRcTGmqYBTonyfSU8WgrJKijd68rn1Kr5tyhJ316gw">
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full">
+<div class="max-w-3xl">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-primary-container mb-4">InSync&nbsp;</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 opacity-90"><br></p>
+<div class="flex gap-4">
+<a class="btn-primary px-8 py-3 rounded-full font-label-md text-label-md" href="#join">Join the Family</a>
+<a class="btn-secondary px-8 py-3 rounded-full font-label-md text-label-md" href="#events">Explore Events</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission Section -->
+<section class="section-padding bg-surface" id="mission">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-6">
+<span class="text-secondary font-label-md text-label-md uppercase tracking-widest mb-4 block">THE PULSE OF PERFORMANCE</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6">THE DANCE CLUB OF IITB</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">We have been catering to all the dance enthusiasts in the institute since 2004. Inclination towards the genre is all one needs to join this club. We are a big family made up of people who not only enjoy dancing together but are also closely connected to one another. Here at InSync, one comes across a ton of opportunities to learn a variety of dance styles from basics to Advanced.</p><div class="mt-8 space-y-1"><p class="font-bold text-primary font-body-lg">Harshita Kumar</p><p class="font-bold text-primary font-body-lg">Institute Dance Secretary</p><p class="font-bold text-primary font-body-lg">Mobile No: XXX-XXX-XXXX</p></div>
+</div>
+<div class="md:col-span-6 relative">
+<div class="aspect-square rounded-xl overflow-hidden glass-card p-2">
+<div class="w-full h-full rounded-lg overflow-hidden">
+<img alt="InSync neon logo on a brick wall" class="w-full h-full object-cover transition-all duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0ujdV3Kv46zexLXjBOd717dAeuHCJ224xmXOqDf_L-3K5zVks321iil5Sgd_KtlXHlg1LggfLD2iFnvYrN9RgDoizSAfweJ-EyiZ5VSc9GtJc540mjgChQFZxEVEcN6Wcw9DFeshlRpiJ6ClSGTyRNn8CCcwoAsx2T6ivwhYQSpKfP5ISHu_MLIybLs26yLf5VYM_7tH-ApGwAKvscrJeBG8rYfk_0wKXBqEcB0J0slce1qgS_SWglPW5Q">
+</div>
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 blur-3xl rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Flagship Event -->
+<section class="section-padding bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="glass-card rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+<div class="relative h-64 md:h-auto">
+<img alt="The Castro Odeon Dance Performance" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNFoQDdsp-wtymteqTVe4X467sqAabJQMJeTTnQDmVPzECqv8bvSeVlUEtKsjgs3Ix-QUInX0tWIDgKxwgDkd7cxqCAwUrQy9hDavwjFNwREL_Ens0SAuZQxu0IDyvv5WnM1-slYl-PqlGHycEiq85KJCo9ktfVY-uzR20zYQ5EeL5L_3y-KOJb2_YTCPwKUDXJCIoyEtgnnj49Pp3tVknudTJ6rpC-UtjNsNo_f8mXbNd_rPW3aZvf5H4I5AZ7Ly1UovN55IHAfsw6g">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-dim/80 to-transparent"></div>
+</div>
+<div class="p-8 md:p-12 flex flex-col justify-center">
+<div class="flex items-center gap-2 text-tertiary mb-4">
+<span class="material-symbols-outlined">star</span>
+<span class="font-label-md text-label-md">FLAGSHIP EVENT</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2">Annual InSync Dance Show</h3>
+<p class="text-secondary font-headline-md text-headline-md mb-6 italic">"The Castro Odeon - Where cinema whispers through dance!"</p>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-md text-label-md mb-8">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span> Convocation Hall</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span> Annual</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Events Grid -->
+<section class="section-padding" id="events">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Experience the Rhythm</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-2">From competitive championships to social nights, find your groove in our diverse event lineup.</p>
+</div>
+<div class="flex gap-2">
+<span class="w-12 h-1 bg-primary rounded-full"></span>
+<span class="w-4 h-1 bg-primary/30 rounded-full"></span>
+<span class="w-4 h-1 bg-primary/30 rounded-full"></span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Gyrations -->
+<div class="glass-card rounded-xl overflow-hidden flex flex-col h-full">
+<div class="h-48 overflow-hidden">
+<img alt="Gyrations Event" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOu3WLEG4s7tc1RsiJlVIfAiPPPwt7lXAPg6r1pp3w8dr7stU-4KzRji7IZ2lWi1etppnTQhiQF_BBUrZCZyVXbWJbKQLmzdxT8NKZicDTy5izUOk6LuHyHRWsCS8r2oFXrtW2kriYDdJh7IGoSHbPXg56iLoMXpaYlQnknQDKiOuAAhCSZQuVU1zytqdaNDK2TKUSU2oRgObaRoz7F6dmuLUQ-_TnGP4y96kITvMK4hYSnWyaGXvARDdUZge06gEpg2-ubsmni1ctBQ">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h4 class="font-headline-md text-headline-md mb-2">Gyrations</h4>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">The ultimate Hostel General Championship. Battle of the best troupes on campus.</p>
+<div class="mt-4 pt-6 border-t border-white/5 font-label-md text-label-md text-secondary">Hostel Pride</div>
+</div>
+</div>
+<!-- Solo Dance -->
+<div class="glass-card rounded-xl p-6 flex flex-col h-full"><div class="h-48 overflow-hidden rounded-t-xl -mt-6 -mx-6 mb-6">
+<img alt="Solo Dance Performance" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlBxMpvsTPK-FO5zTSgt8wAJfc3WKFmnCgbGxDH_0cMF6m0mKpAm-oV-ofsyfMGKwhYHuar8kSvUAaqVL6Y8w-7ovJGMPsvbouwuTtiKNwQcmQG92hoMQLgg6sA1CyyGcIpKaDjQOfWMvEZ3oc0uf3L6F2zk6uYn2fJico4M4V6i4WWp7BEeGTzGq9iWKMFiLkXsGJWeSKRUBC2qXBoP_Ca932TTpGjIr3OrzJCyBpQhI9Ok0Gs4oID0_cMSyk8FIsRpjTSvvt4so">
+</div>
+<h4 class="font-headline-md text-headline-md mb-2">Solo Dance</h4>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">The gateway to Freshiezza. Show the world your individual brilliance.</p>
+<div class="mt-6 pt-6 border-t border-white/5 font-label-md text-label-md text-secondary">Competition</div>
+</div>
+<!-- Salsa Night -->
+<div class="glass-card rounded-xl overflow-hidden flex flex-col h-full">
+<div class="h-48 overflow-hidden">
+<img alt="Salsa Night Close-up" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0aqS1GAlihWocfPFEJaxfWDmvXQZMC6hwv4QpzYAfR2cUaNLq4IDm6UGDYvK7zfRKpd7VLJfvSFTiN9NTsi6PkqeRhd6nL9DOlTl4W6TJeFm33wr1U3krc93cF3aRH0K4obZ2LaAADTZ2inGWXVGdVTbtlg9m053vVAKJ35Amj_NO7MiLqHZB9NA14OUJwsoNPdCZlUbbXoY3lxHosQ_3mObpMHNtBHUEngXL15ALLbw4ivy7vxfthO67XBt_Z_j-9su0-51CL_XEJA">
+</div>
+<div class="p-6 flex flex-col flex-grow"><h4 class="font-headline-md text-headline-md mb-2">Salsa Night</h4><p class="font-body-md text-body-md text-on-surface-variant flex-grow">Rhythm and laughter. A night of connection and learning the Latin art of social dance.</p><div class="mt-6 pt-6 border-t border-white/5 font-label-md text-label-md text-secondary">Social</div></div>
+</div>
+<!-- Workshops -->
+<div class="glass-card rounded-xl overflow-hidden flex flex-col h-full md:col-span-2">
+<div class="flex flex-col md:flex-row">
+<div class="md:w-1/2 h-64">
+<img alt="Workshop Session" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtMPTuT79eHyqc3OUcF7M5FIDDp08r19IJjh5gqXP3XBBh8MMg1FArPo0hMKDu2VuKzDmCW_vwr81h0zxUdpDXFDLaVmfx9heW-xH5C7ezLVs48AoLhLuRI2AyeBHkdIPUl-pVk6YbaIUWthwrol2UCn-dZtAcXSPEeOfgQ2oiF8Ft_IZ-v6c-4l8i21rE8v0cMhyNFn5GHnn8tVvFnD8xyzoHUTe4Eaa8rW3WBE9XhVJhGKN-ipr6jr3cy1aKSkZXC4ao-2oqGFk">
+</div>
+<div class="md:w-1/2 p-8 flex flex-col justify-center">
+<h4 class="font-headline-md text-headline-md mb-2">Dance Workshops</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Learn amazing moves from industry professionals and seasoned seniors. From Hip-Hop to Classical.</p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-1 group" href="#">
+                                View Schedule 
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Freshiezza -->
+<div class="glass-card rounded-xl p-6 flex flex-col h-full"><div class="h-48 overflow-hidden rounded-t-xl -mt-6 -mx-6 mb-6">
+<img alt="Freshiezza Event" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCar5stEgCpMiq5sY12Gd19-_fpOvPCMEoYTEZYCOtsVyjbCq1kUcwtXXun8cmoERdps7xdnvrYwfZFekpeb485h6PdX1dcoCMvIRmMeFjCUQE4tuSETUlul88xXRRSBB71ZeV7qLt0mgHAf3WI4d8eGju4LL5DuYgrsaLCrouJ52tJDJExDm1f3TLYzwRVt_jckLoK1mQIvwGLQTzR-kTVdoDqmjwnEwCWvY2AJbb7IZW1-Miig8FfDKBKPadxD9K7IYSS7e-g4K4">
+</div>
+<h4 class="font-headline-md text-headline-md mb-2">Freshiezza</h4>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">The freshers group dance competition. Your first big stage moment at IITB.</p>
+<div class="mt-6 pt-6 border-t border-white/5 font-label-md text-label-md text-secondary">Freshers Exclusive</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Bento -->
+<section class="section-padding bg-surface-container-lowest" id="gallery">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-center mb-12">Captured Moments</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:h-[600px]">
+<div class="col-span-2 row-span-2 rounded-2xl overflow-hidden glass-card group">
+<img alt="Main performance action" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy2X_3KyME7oJsh4tTtQMvXsY44nDSjLnuyeXc9cUum5KffpxgT2ALRjataH0FcwtVpajaowIMq3PIMqr7RfnZdGyTIz5x4khFAGbTd2rEnbroXj7Kb9vmJ0umnzcRMsDqggZ0_FBd3isU140K2flWUGCQik2-KoWqCJYknsEKkp7vLh1b6iNzG1WL1TlW1q9kJWOvC-gY8rYlgxyCEUz-nfFb3u2V_xuTOOr7sZCNFV2F5JMAPIpll97PaJQfXX-H2x20jSOHzHeU4w">
+</div>
+<div class="rounded-2xl overflow-hidden glass-card group">
+<img alt="Salsa footwear detail" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo-kq6hvWrzEna-4L31-NKT-U11SXljgUpgVwlXlhwRPkKG-NTem8nx9ZTYAsz4lcPhHzU1E7-MHijq91aMJVjVyq_nwJdGz4qGSWTvyX1hAUA42aQ8zPUFRJ8p9wNd5cHyhhZkq6FiwbUKQ41BArl0A6HeJ7NR5PS4VJL0CWDNXVWugfwEsxzib5dp5-fGHGArlW5G3qDEJwZ5lQftU9sDMs4Yg3Jt8Gs1pppdsZGK7Is_Y02B0Zur136Iyzzj7_U62OcARoexNcWsA">
+</div>
+<div class="rounded-2xl overflow-hidden glass-card group">
+<img alt="Workshop group photo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOJmgZpfNXLS0n3wsrhOzYAPBfszJ155LxP3EB2pWSQb_byG5_8jN1EXEmTwfdAngkaVVTqCx-UWxxou06bxS55yrTlxfGje5AMZUD4HCQmqX4fQHnQplHR5vRbG7s6_F1bmkaXi7XVreVLHXOAH1NuY0HiEAryQ41WhT-BPw0_TozEcq9CKZZS9TVMUoply80A7239qWMCfbSYgqfjd9nHcAqNH-xxW5JH7EO344QOuAPGZmmKLlX_VcQP_ls8I2eHSzzNOOlzLQVPw">
+</div>
+<div class="col-span-2 rounded-2xl overflow-hidden glass-card group">
+<img alt="Stage lighting and ensemble" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA_VNRdCvRVVJ6tA1SHYPAvtBLXidEBFzMVIEZWJCQ55BA27d-n72I25yIzKD6vGW5Pn6gbCN4TY9NrgRZJzWdi435yvtR8EWXFKWvdMZ_CayVDR5H83RnDeT305bfUxO4QIOtR3ArNyx-mam02Kw9WCyQcuoKYV0CLD3hxUy5RMG3z0TWbrQAVEUKNfbppleSxJ-pNWTyUBzkxNiG7ipZoOhwoIc_ta1CBDYk81Oz7a32HEMfnrwFm7SIW8Vm0muMLrsL7a8-e589Iw">
+</div>
+</div>
+</div>
+</section>
+<!-- Join Us Section -->
+<section class="section-padding" id="join">
+<div class="max-w-[800px] mx-auto px-margin-mobile md:px-gutter">
+<div class="glass-card rounded-3xl p-8 md:p-12 text-center">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">Start Your Journey</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10">Whether you're a pro or have two left feet, there's a place for you in InSync.</p>
+<form class="space-y-6 text-left" onsubmit="event.preventDefault(); alert('Welcome to the family!');">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface ml-1">Name</label>
+<input class="w-full bg-surface-container-high border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary text-on-surface" placeholder="John Doe" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface ml-1">Email</label>
+<input class="w-full bg-surface-container-high border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary text-on-surface" placeholder="john@iitb.ac.in" type="email">
+</div>
+</div>
+<button class="w-full btn-primary py-4 rounded-xl font-label-md text-label-md text-lg" type="submit">Submit Application</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<script>
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple scroll reveal for nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl', 'bg-surface/80');
+            } else {
+                nav.classList.remove('shadow-xl', 'bg-surface/80');
+            }
+        });
+    </script>
+
+
+
+
+
+
+</body></html>
